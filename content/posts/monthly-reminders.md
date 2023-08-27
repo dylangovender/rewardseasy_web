@@ -13,8 +13,7 @@ draft: false
 
 2. Ensure 80% of online spend on VCC [2000 points]
 
-
-3. Ensure 80% of instore spend on VCC [1000 points]
+3. Ensure 80% of in-store spend on VCC [1000 points]
 
 
 4. View the "track my rewards" tab on the app. FNB app -> eBucks -> Earn -> Track my rewards [1000 points]
