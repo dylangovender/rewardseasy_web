@@ -1,5 +1,3 @@
-
-
 [module]
 [module.hugoVersion]
 min = "0.77.0"
@@ -54,10 +52,14 @@ category = "categories"
 
 # Menu links
 [[menu.main]]
-name = "Blog"
+name = "Monthly Reminders"
 weight = 1
-url  = "posts/"
+url  = "posts/monthly-reminders"
 [[menu.main]]
-name = "About"
+name = "Once offs"
 weight = 2
-url = "about/"
+url = "posts/once-offs"
+[[menu.main]]
+name = "2023/2024 changes"
+weight = 3
+url = "posts/2023-2024-changes"
