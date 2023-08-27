@@ -16,7 +16,6 @@ paginate = 20
 style = "github-dark"
 
 [params]
-author = "Dylan Govender"
 
 faviconSVG = "/img/favicon.svg"
 favicon_32 = "/img/favicon-32x32.png"
