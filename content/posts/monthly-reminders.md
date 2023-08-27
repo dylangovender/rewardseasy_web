@@ -45,3 +45,5 @@ draft: false
 
 	Engage with 1         : [500 points]
 	Engage with 2 or more : [1000 points]
+
+{{ template "_internal/disqus.html" . }}
