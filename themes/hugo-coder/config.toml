@@ -27,7 +27,7 @@ since = 2023
 enableTwemoji = true
 
 colorScheme = "auto"
-hidecolorschemetoggle = true
+hidecolorschemetoggle = false
 
 # customCSS = ["css/custom.css"]
 # customSCSS = ["scss/custom.scss"]
