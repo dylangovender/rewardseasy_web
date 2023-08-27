@@ -20,7 +20,7 @@ draft: false
 
 **6. Real Time payments (Instant Pay or PayShap) for at least R100 [1000 points]:**
 
-	Premier: 3 payments 
+	Prem   : 3 payments 
 	PC     : 4 payments
 	PW/RMB : 5 payments
 
