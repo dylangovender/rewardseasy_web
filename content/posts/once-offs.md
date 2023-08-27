@@ -32,5 +32,3 @@ draft: false
 	1 April to 30 June (Q4) 
 
 In order to enjoy this benefit monthly, nav» Home should be accessed in the beginning of each quarter.
-
-{{ template "_internal/disqus.html" . }}
