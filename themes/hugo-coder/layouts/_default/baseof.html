@@ -6,6 +6,16 @@
   {{ partial "head.html" . }}
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MJMGGRHDG2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MJMGGRHDG2');
+</script>
+
 {{ $csClass := "colorscheme-light" }}
 {{ if eq .Site.Params.colorScheme "dark" }}
 {{ $csClass = "colorscheme-dark" }}
