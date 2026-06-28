@@ -1,0 +1,20 @@
+<section class="container centered">
+  <div class="about">
+    <h1>{{ .Site.Title }}</h1>
+    {{ with .Site.Params.info }}<h2>{{ . | markdownify }}</h2>{{ end }}
+  </div>
+
+  <div class="home-intro" style="max-width: 42rem; margin: 1.5rem auto 0; text-align: left;">
+    <p>{{ .Site.Params.description }}</p>
+    <p>Pick where to start:</p>
+    <ul>
+      <li><a href="/posts/how-level-5-works/"><strong>Start here</strong></a> — how eBucks Level&nbsp;5 works, in one screen.</li>
+      <li><a href="/posts/monthly-reminders/"><strong>Monthly checklist</strong></a> — do these every month.</li>
+      <li><a href="/posts/once-offs/"><strong>Once-offs &amp; quarterly</strong></a> — set and forget.</li>
+      <li><a href="/posts/limits-and-targets/"><strong>Limits &amp; targets</strong></a> — every cap, rate and threshold.</li>
+      <li><a href="/posts/ebucks-vs-ucount-vs-discovery/"><strong>Compare</strong></a> — eBucks vs UCount vs Discovery.</li>
+      <li><a href="/posts/2026-2027-changes/"><strong>What changed</strong></a> — the 2026/27 updates.</li>
+    </ul>
+    <p><small>Updated for the 2026/27 eBucks rules (effective 1&nbsp;July&nbsp;2026).</small></p>
+  </div>
+</section>
