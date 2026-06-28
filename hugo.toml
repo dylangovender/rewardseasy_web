@@ -4,3 +4,42 @@ title = 'Rewards Easy'
 theme = 'hugo-coder'
 googleAnalytics = 'G-MJMGGRHDG2'
 disqusShortname = 'rewardseasy'
+enableEmoji = true
+
+[params]
+author = 'Rewards Easy'
+description = 'Plain, to-the-point guides to maxing out FNB eBucks — updated for 2026/27.'
+info = 'Hit eBucks Level 5 — without wading through the eBucks website.'
+dateFormat = 'January 2, 2006'
+colorScheme = 'auto'
+since = 2023
+
+[[menu.main]]
+name = 'Start here'
+url = '/posts/how-level-5-works/'
+weight = 1
+
+[[menu.main]]
+name = 'Monthly'
+url = '/posts/monthly-reminders/'
+weight = 2
+
+[[menu.main]]
+name = 'Once-offs'
+url = '/posts/once-offs/'
+weight = 3
+
+[[menu.main]]
+name = 'Limits & targets'
+url = '/posts/limits-and-targets/'
+weight = 4
+
+[[menu.main]]
+name = 'Compare'
+url = '/posts/ebucks-vs-ucount-vs-discovery/'
+weight = 5
+
+[[menu.main]]
+name = 'What changed'
+url = '/posts/2026-2027-changes/'
+weight = 6
