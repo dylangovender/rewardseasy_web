@@ -1,47 +1,56 @@
 ---
-title: "eBucks monthly reminders"
-date: 2023-08-27
+title: "eBucks monthly checklist (2026/27)"
+date: 2026-06-27
 draft: false
 ---
-1\. Have a minimum monthly deposit _OR_ do at least 10 debit transactions per month:
 
-     Prem   : R19500/10 transactions [2000 points]
-     PC     : R32500/10 transactions [2500 points]
-     PW     : R60000/10 transactions [3000 points]
-     RMB    : R32500/10 transactions [3000 points]
+Do these **every month** to hit Level 5. Points reset monthly and don't carry over, so run through this early. Point values shown as **Premier / Private Clients / Private Wealth / RMB**.
 
-2\. Ensure 80% of online spend on VCC [2000 points]
+New to this? Read [how Level 5 works]({{< ref "how-level-5-works" >}}) first.
 
-3\. Ensure 80% of in-store spend on VCC [1000 points]
+## 1. Income deposit + 10 transactions — the big one [2,000 / 2,500 / 3,000 / 3,000]
 
-4\. View the "track my rewards" tab on the app. FNB app -> eBucks -> Earn -> Track my rewards [1000 points]
+Meet **both** parts:
 
-5\. Pay at least 2 bills using the FNB Pay Bills functionality on the FNB App every month (these include bills such as utilities, DSTV and insurance) [1000 points]
+- **Deposit** (not an inter-account transfer) into your qualifying account:
 
-6\. Real Time payments (Instant Pay or PayShap) for at least R100 [1000 points]:
+  | | Premier | Private Clients | Private Wealth | RMB |
+  |---|---|---|---|---|
+  | Monthly deposit | R16,500 | R32,500 | R60,000 | R60,000 |
 
-	Prem   : 3 payments 
-	PC     : 4 payments
-	PW/RMB : 5 payments
+  *Or* a 12-month average of that amount. *Or* the reduced **spouse/partner** threshold (~R5,500) if you bank on a linked spousal account.
+- **AND at least 10 qualifying debit transactions.**
 
-7\. Have your child linked to your Family Profile with an active FNBy transactional account [500 points] _OR_ grow their FNBy savings account [1000 points]:
+{{< notice warning "Miss the 10 transactions and you're capped at Level 3" >}}
+This is the single most common reason people get stuck. Card swipes, debit orders, electronic payments, prepaid buys and ATM withdrawals all count. Account fees, transfers and cash deposits don't.
+{{< /notice >}}
 
-	Prem   : R200 growth in savings 
-	PC     : R300 growth in savings
-	PW/RMB : R400 growth in savings
+## 2. Pay with your Virtual Card
 
-8\. App transactions (app payments/transfers) [500 points]:
+Use your **Virtual Card for 80%+ of spend**. It no longer earns levelling points (that changed for 2026/27), but it's what unlocks the high partner earn rates and Smart Spend. Set it up once in the FNB App and add it to your phone's wallet. *(70+? You're exempt.)*
 
-	Prem   : 6 transactions
-	PC     : 8 transactions
-	PW/RMB : 10 transactions
+## 3. Digital engagement [500 each]
 
-9\. Edit your Smart budget categories/View your Net Worth/View your credit status:
+- **Track my rewards + Earn more** — open *both* tabs under eBucks on the FNB App. [500]
+- **nav» Money** — view 2 or more of: net worth, credit status, spend tracking (or set up 3+ Smart Budget categories). [500]
 
-    Engage with 1         : [500 points]
-    Engage with 2 or more : [1000 points]
+## 4. Pay & buy on the app [up to 500 each]
 
-10\. Engage with Udemy (login)/Extramarks (login)/eBucks Games (login)/BiB (view tab)/The ENTERTAINER (redeem a code):
+- **Pay 2+ bills** through FNB Pay on the app (utilities, DSTV, insurance). [up to 500]
+- **Buy across 3 app categories**: prepaid electricity, airtime/data bundles, and non-retail vouchers. [500]
 
-	Engage with 1         : [500 points]
-	Engage with 2 or more : [1000 points]
+## 5. Save & invest [points scale with amount]
+
+- **Grow your savings** + a **scheduled transfer** into savings. [500]
+- **Grow your Retirement Annuity.** [up to 1,500]
+- **Tax-free contribution** (R36,000/year maxes it). [up to 1,500]
+- Hold qualifying **savings / retirement balances** for additional points — see [limits & targets]({{< ref "limits-and-targets" >}}).
+
+## 6. Family [up to 1,000]
+
+- **Link your spouse/partner** to your family profile (must be verified). [1,000]
+- **Child with an FNBy account** linked to your profile [500] *or* grow their FNBy savings [1,000].
+
+---
+
+That stack alone clears Level 5 for most people once you add the [once-off product points]({{< ref "once-offs" >}}) (Fusion + Credit Card, insurance, home loan). Exact thresholds and point values live in the FNB App under **eBucks → Earn → Track my rewards**; the [limits & targets]({{< ref "limits-and-targets" >}}) page has the full breakdown.
