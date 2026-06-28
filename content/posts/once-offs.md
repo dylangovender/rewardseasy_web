@@ -1,34 +1,34 @@
 ---
-title: "Once-offs"
-date: 2023-08-27
+title: "eBucks once-offs & quarterly (2026/27)"
+date: 2026-06-26
 draft: false
 ---
 
-**Once offs (set and forget):**
+Set these up once and they earn points **every month** with no further effort.
 
-1. Have a Fusion Account + Card/Credit Account + Card:
+## Once-offs (set & forget)
 
-       One : [1000 points]
-       Both: [2000 points]
+1. **Fusion Account + Card and/or Credit Account + Card** — one [1,000], both [**2,000**]. This combo is the ideal eBucks setup: Fusion as your transactional account, a Virtual Card on the credit account for 80%+ of your spend.
+2. **Islamic alternative** — an active Islamic transactional account plus at least one other Islamic account (savings, term deposit, or WesBank vehicle finance) [1,000]. *New for 2026/27:* extra points for keeping an Islamic minimum balance and using the Earn tab [up to 2,000].
+3. **Active Credit Card** [1,000].
+4. **Verified spouse/partner** linked to your family profile [1,000].
+5. **Healthy credit status** on nav» Money — reach **any green** [500]. *(Simplified for 2026/27 — it used to split light/dark green at 500/1,000.)*
 
-2. Have an active Islamic transactional account and  at least one other active Islamic linked savings account, Islamic term deposit account, or Islamic WesBank vehicle finance account. [1000 points]
+## Products that earn ongoing (worth it if you have the need)
 
-3. Spouse/Partner linked with matching account type [1000 points to both people]
+- **FNB Life Customised cover**, paid via FNB [up to **3,500**]
+- **FNB Home Loan** with a debit/stop order [1,000]
+- Personal loan (debicheck), revolving facility, global account, will & estate — point values and thresholds on [limits & targets]({{< ref "limits-and-targets" >}}).
 
-4. Maintain a healthy Credit status on nav» Money:
+## Quarterly
 
-       Light green:  [500 points]
-       Dark green : [1000 points]
+- Engage **nav» Home** on the FNB App in **months 1, 4, 7 and 10** [500] — i.e. the start of each quarter.
 
-**Quarterly:**
+| Quarter | Months |
+|---|---|
+| Q1 | Jul – Sep |
+| Q2 | Oct – Dec |
+| Q3 | Jan – Mar |
+| Q4 | Apr – Jun |
 
-1. Manage your property or use one of the available services under the nav» Home tab on the FNB App once a quarter. Visit the 'nav-igate life' tab then select 'nav» Home'. [500 points] :
-
-**Quarters will run from:**
-
-	1 July to 30 September (Q1)
-	1 October to 31 December (Q2)
-	1 January to 31 March (Q3) 
-	1 April to 30 June (Q4) 
-
-In order to enjoy this benefit monthly, nav» Home should be accessed in the beginning of each quarter.
+Open nav» Home at the **start** of each quarter to keep the benefit flowing all quarter.
