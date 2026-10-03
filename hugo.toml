@@ -13,6 +13,7 @@ info = 'Hit eBucks Level 5 — without wading through the eBucks website.'
 dateFormat = 'January 2, 2006'
 colorScheme = 'auto'
 since = 2023
+customCSS = ['css/partners.css']
 
 [[menu.main]]
 name = 'Start here'
