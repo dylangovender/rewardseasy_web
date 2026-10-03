@@ -1,0 +1,110 @@
+# Tiered earn rates per programme — for the per-account analysis after the Venn.
+# Researched 3 Oct 2026. Percentages are "up to" rates at each tier/level.
+
+ebucks:
+  # Rows indexed by reward level L1..L5. Pay with the FNB Virtual Card. Accounts: Premier, Private Clients (PC),
+  # Private Wealth (PW), RMB Private Bank (RMB). L5 needs 9,500 / 11,000 / 13,000 / 13,000 points.
+  levels: [L1, L2, L3, L4, L5]
+  source: "ebucks.com earn-from-the-bank-2026 pages + 2026/27 Summary Guides"
+  rates:
+    pick_n_pay_asap:     { all_accounts: [2, 5, 10, 15, 30], unit: pct }
+    pick_n_pay_instore:  { all_accounts: [1.5, 3, 6, 10, 20], unit: pct }
+    pick_n_pay_clothing: { all_accounts: [1.5, 3, 6, 10, 20], unit: pct }
+    clicks:              { all_accounts_l5: 15, unit: pct, note: "30% on Family Day (15th) and Wednesdays 60+" }
+    arc:                 { premier_l5: 15, private_wealth: [2, 5, 10, 15, 30], unit: pct }
+    golfers_club:        { l5: 30, unit: pct }
+    engen_fuel:
+      unit: rand_per_litre
+      base:      [0.20, 0.40, 0.80, 2, 4]
+      plus_vehicle_finance: [0.10, 0.20, 0.40, 1, 2]
+      plus_fnb_car_insurance: [0.10, 0.20, 0.40, 1, 2]
+      max_l5: 8
+      monthly_cap: { premier: 2000, private_clients: 2500, private_wealth: 3000 }
+    devices_partner_shop: { L3: 25, L4: 50, l5: { premier: 40, private_clients: 60, private_wealth: 100, rmb: 100 }, unit: pct }
+    woolworths:
+      unit: rand_reward_at_spend_threshold
+      note: "From 1 Oct 2026. Highest threshold reached in the month; Virtual Card only. Not available to Premier."
+      private_clients:
+        - { spend: 1000, reward: [10, 15, 20, 40, 60] }
+        - { spend: 2500, reward: [30, 40, 55, 110, 175] }
+        - { spend: 4000, reward: [90, 110, 165, 350, 600] }
+      private_wealth_and_rmb:
+        - { spend: 1500, reward: [20, 30, 40, 80, 120] }
+        - { spend: 2500, reward: [60, 80, 110, 220, 350] }
+        - { spend: 6500, reward: [180, 220, 330, 700, 1000] }
+  grocery_cap_premier: 3000
+
+ucount:
+  # Rows indexed by Tier 1..5 (Tiering Points: 0-399 / 400-574 / 575-724 / 725-874 / 875+). R25/month membership.
+  tiers: [T1, T2, T3, T4, T5]
+  source: "ucount.standardbank.co.za earn-points pages"
+  caps: "Lower of 20% of total card spend or R2,500 per cycle (CYOR, Clicks, fuel)"
+  rates:
+    checkers_shoprite_sixty60_online:
+      virtual_credit:  [4, 6, 10, 20, 40]
+      physical_credit: [4, 6, 8, 15, 30]
+      evolve:          [1.5, 2.5, 3.5, 6, 15]
+      debit_cheque:    [0.5, 0.75, 1, 2, 5]
+    checkers_shoprite_instore:
+      virtual_credit:  [4, 6, 8, 15, 30]
+      physical_credit: [2, 3, 4, 10, 20]
+      evolve:          [1.5, 2.5, 3.5, 6, 15]
+      debit_cheque:    [0.5, 0.75, 1, 2, 5]
+    other_cyor_retailers:   # Woolworths, Makro, Game, fashion & lifestyle retailers in your chosen category
+      credit:          [2, 3, 4, 10, 20]
+      evolve:          [1.5, 2.5, 3.5, 6, 15]
+      debit_cheque:    [0.5, 0.75, 1, 2, 5]
+      note: "Non-chosen CYOR categories earn up to 1%"
+    clicks:
+      virtual_credit_online:  [4, 6, 8, 15, 30]
+      virtual_credit_instore: [2, 3, 4, 10, 20]
+      physical_credit:        [1.5, 2.5, 3.5, 7.5, 15]
+      virtual_evolve_online:  [1.35, 2.25, 3.25, 6.5, 12.5]
+      virtual_evolve_instore: [1.25, 2, 3, 5, 10]
+      physical_evolve:        [1, 1.5, 2, 3.5, 7.5]
+      virtual_debit_online:   [0.5, 1, 1.5, 3, 6.5]
+      virtual_debit_instore:  [0.35, 0.5, 0.75, 1.5, 5]
+    astron_energy_fuel:
+      unit: rand_per_litre
+      credit:   [0.30, 0.45, 0.90, 1.50, 5.00]
+      evolve:   [0.15, 0.30, 0.50, 1.00, 2.50]
+      debit:    [0.10, 0.15, 0.30, 0.50, 1.00]
+      double_credit: [0.60, 0.90, 1.80, 3.00, 10.00]
+      double_evolve: [0.30, 0.60, 1.00, 2.00, 5.00]
+      note: "Double requires 100% of spend on a qualifying Standard Bank credit/Evolve card"
+  todo: "Per-retailer tables for Makro, Game, KFC, Samsung etc. live on /earn-points/rewards-retailers/{slug} — not yet captured"
+
+discovery:
+  # Max "up to" rates by product (Suite / Credit Card Account). Status Blue→Diamond + monthly spend set the actual %.
+  # "Both" = Vitality Health + Vitality Money; "money_only" = Vitality Money without Vitality Health.
+  products: [gold, platinum, black, purple]
+  source: "Discovery Bank rewards guides per collection, effective 1 Jan 2026"
+  rates:
+    healthyfood:   { both: [40, 50, 50, 75], money_only: [15, 25, 25, 50], partners: [Checkers, Woolworths] }
+    healthycare:   { both: [40, 50, 50, 50], money_only: [15, 25, 25, 25], partners: [Clicks, Dis-Chem] }
+    fuel_and_uber: { all: [10, 15, 15, 20], partners: [bp, Shell, Uber], note: "Vitality Drive can add more" }
+    miles_plus_network: { virtual_card: [10, 12.5, 15, 15], physical: "1–2%", note: "R5k/R15k per-partner thresholds, R50k global cap" }
+    base_miles:    { suite: ["Ð1/R20", "Ð1/R15", "Ð1/R15", "Ð1/R15"] }
+  black_suite_status_tables:   # example of how status × monthly spend drives the Vitality Money portion
+    statuses: [Blue, Bronze, Silver, Gold, Diamond]
+    healthyfood_money_portion:
+      - { spend: "R0–3,149",       pct: [0, 0, 0, 0, 0] }
+      - { spend: "R3,150–5,749",   pct: [5, 5, 5, 5.5, 7.5] }
+      - { spend: "R5,750–8,899",   pct: [5, 5, 5, 6, 8.5] }
+      - { spend: "R8,900–12,049",  pct: [5, 5, 6, 7.5, 10] }
+      - { spend: "R12,050–15,249", pct: [5, 6, 7.5, 9, 12.5] }
+      - { spend: "R15,250–18,449", pct: [6, 7.5, 9, 11, 15] }
+      - { spend: "R18,450–23,599", pct: [7, 8.5, 10.5, 13, 17.5] }
+      - { spend: "R23,600–28,999", pct: [8, 10, 12, 15, 20] }
+      - { spend: "R29,000+",       pct: [8, 12.5, 15, 18.5, 25] }
+    fuel_uber:
+      - { spend: "R0–3,149",       pct: [0, 0, 0, 0, 0] }
+      - { spend: "R3,150–5,749",   pct: [3, 3, 3, 3.5, 5] }
+      - { spend: "R5,750–8,899",   pct: [3, 3, 3.5, 4.5, 6] }
+      - { spend: "R8,900–12,049",  pct: [3, 3.5, 4, 5, 7] }
+      - { spend: "R12,050–15,249", pct: [3, 4, 4.5, 6, 8] }
+      - { spend: "R15,250–18,449", pct: [4, 5, 6, 7.5, 10] }
+      - { spend: "R18,450–23,599", pct: [4, 5.5, 6.5, 8, 11] }
+      - { spend: "R23,600–28,999", pct: [5, 6.5, 7.5, 9, 12.5] }
+      - { spend: "R29,000+",       pct: [5, 7.5, 9, 11, 15] }
+  spend_side: "Spending Miles at partners gives up to 15% off (up to 30% on Miles Ð-Day, the 15th)"
