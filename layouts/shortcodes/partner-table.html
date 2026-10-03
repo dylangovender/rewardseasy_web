@@ -1,0 +1,58 @@
+{{- $d := site.Data.partners -}}
+{{- $word := dict "earn" "Earn" "spend" "Spend" "perk" "Perk" -}}
+<div class="ptable-tools">
+  <input type="search" id="ptable-q" placeholder="Search brands…" aria-label="Search brands">
+  <select id="ptable-cat" aria-label="Filter by category">
+    <option value="">All categories</option>
+    {{- range $k, $v := $d.categories }}
+    <option value="{{ $k }}">{{ $v }}</option>
+    {{- end }}
+  </select>
+  <label class="ptable-multi"><input type="checkbox" id="ptable-multi"> In 2+ schemes only</label>
+  <span id="ptable-count" aria-live="polite"></span>
+</div>
+<div class="ptable-scroll">
+  <table class="ptable" id="ptable">
+    <thead>
+      <tr><th scope="col">Brand</th><th scope="col">Category</th><th scope="col" class="h-ebucks">eBucks</th><th scope="col" class="h-ucount">UCount</th><th scope="col" class="h-discovery">Discovery</th></tr>
+    </thead>
+    <tbody>
+      {{- range $d.brands }}
+      {{- $b := . }}
+      {{- $key := partial "partner-key.html" . }}
+      <tr data-cat="{{ .category }}" data-n="{{ len $key }}" data-name="{{ lower .name }}">
+        <th scope="row">{{ .name }}</th>
+        <td class="pcat">{{ index $d.categories .category }}</td>
+        {{- range $p := slice "ebucks" "ucount" "discovery" }}
+        <td class="pcell">
+          {{- with index $b $p }}
+            {{- range .roles }}<span class="pbadge pbadge-{{ . }}">{{ index $word . }}</span>{{ end }}
+            {{- with .note }}<span class="pnote">{{ . }}</span>{{ end }}
+          {{- else }}<span class="pnone" title="Not a partner">—</span>{{ end -}}
+        </td>
+        {{- end }}
+      </tr>
+      {{- end }}
+    </tbody>
+  </table>
+</div>
+<script>
+(function () {
+  var t = document.getElementById('ptable'); if (!t) return;
+  var body = t.tBodies[0], rows = Array.prototype.slice.call(body.rows);
+  rows.sort(function (a, b) { return a.dataset.name.localeCompare(b.dataset.name); });
+  rows.forEach(function (r) { body.appendChild(r); });
+  var q = document.getElementById('ptable-q'), cat = document.getElementById('ptable-cat'),
+      multi = document.getElementById('ptable-multi'), count = document.getElementById('ptable-count');
+  function apply() {
+    var s = q.value.trim().toLowerCase(), c = cat.value, m = multi.checked, n = 0;
+    rows.forEach(function (r) {
+      var show = (!s || r.dataset.name.indexOf(s) > -1) && (!c || r.dataset.cat === c) && (!m || +r.dataset.n > 1);
+      r.hidden = !show; if (show) n++;
+    });
+    count.textContent = n + ' of ' + rows.length + ' brands';
+  }
+  [q, cat, multi].forEach(function (el) { el.addEventListener('input', apply); el.addEventListener('change', apply); });
+  apply();
+})();
+</script>

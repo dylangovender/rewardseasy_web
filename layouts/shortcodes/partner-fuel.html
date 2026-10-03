@@ -1,0 +1,19 @@
+{{- $d := site.Data.partners -}}
+<div class="pfuel">
+  {{- range $p := slice "ebucks" "ucount" "discovery" }}
+  <div class="pfuel-col pfuel-{{ $p }}">
+    <h4>{{ (index $d.programmes $p).name }}</h4>
+    <div class="pfuel-tiles">
+      {{- range $d.brands }}
+        {{- if and (eq .category "fuel") (index . $p) }}
+          {{- $logo := index $d.logos .name }}
+      <div class="ptile">
+        {{- if $logo }}<img src="{{ printf "logos/%s" $logo | relURL }}" alt="{{ .name }}" loading="lazy">{{ else }}<span class="ptile-name">{{ .name }}</span>{{ end }}
+        {{ partial "partner-chips.html" . }}
+      </div>
+        {{- end }}
+      {{- end }}
+    </div>
+  </div>
+  {{- end }}
+</div>

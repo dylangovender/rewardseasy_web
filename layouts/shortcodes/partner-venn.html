@@ -1,0 +1,39 @@
+{{- $d := site.Data.partners -}}
+{{- $labels := dict "EUD" "In all three" "ED" "eBucks + Discovery" "UD" "UCount + Discovery" "EU" "eBucks + UCount" -}}
+<figure class="pvenn-wrap">
+  <div class="pvenn">
+    <svg class="pvenn-bg" viewBox="0 0 1000 990" aria-hidden="true" focusable="false">
+      <circle class="c-ebucks"    cx="345" cy="345" r="330"/>
+      <circle class="c-discovery" cx="655" cy="345" r="330"/>
+      <circle class="c-ucount"    cx="500" cy="610" r="330"/>
+    </svg>
+    <span class="pvenn-label l-ebucks">FNB eBucks</span>
+    <span class="pvenn-label l-discovery">Discovery Miles</span>
+    <span class="pvenn-label l-ucount">Standard Bank UCount</span>
+    {{- $solo := dict "E" "eBucks" "U" "UCount" "D" "Discovery" }}
+    {{- range $k, $label := $solo }}
+      {{- $n := 0 }}
+      {{- range $d.brands }}{{ if eq (partial "partner-key.html" .) $k }}{{ $n = add $n 1 }}{{ end }}{{ end }}
+    <a class="pvenn-solo s-{{ $k }}" href="#every-partner"><b>+{{ $n }}</b> {{ $label }}-only partners</a>
+    {{- end }}
+    {{- range $region := slice "EUD" "ED" "UD" "EU" }}
+    <div class="pvenn-cluster r-{{ $region }}" data-label="{{ index $labels $region }}">
+      {{- range $d.brands }}
+        {{- if eq (partial "partner-key.html" .) $region }}
+          {{- $logo := index $d.logos .name }}
+      <div class="ptile">
+        {{- if $logo }}<img src="{{ printf "logos/%s" $logo | relURL }}" alt="{{ .name }}" loading="lazy">{{ else }}<span class="ptile-name">{{ .name }}</span>{{ end }}
+        {{ partial "partner-chips.html" . }}
+      </div>
+        {{- end }}
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+  <figcaption class="pvenn-legend">
+    <span><span class="pchip pchip-ebucks">E</span> eBucks</span>
+    <span><span class="pchip pchip-ucount">E</span> UCount</span>
+    <span><span class="pchip pchip-discovery">E</span> Discovery</span>
+    <span class="pvenn-key"><b>E</b> earn · <b>S</b> spend · <b>P</b> perk</span>
+  </figcaption>
+</figure>
