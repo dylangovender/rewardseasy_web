@@ -1,0 +1,229 @@
+# Brand ↔ rewards-programme associations (South Africa) — source for the Venn diagram.
+# Researched 3 October 2026 from the official eBucks, UCount and Discovery sites.
+#
+# roles per programme:
+#   earn  = you earn points/eBucks/Miles there
+#   spend = you can redeem points/eBucks/Miles there
+#   perk  = a membership benefit/voucher partner (not a straight earn/spend partner)
+# confidence: high = seen on the programme's own site; medium = secondary source or inferred.
+
+programmes:
+  ebucks:    { name: "FNB eBucks",            bank: "FNB / RMB Private Bank", currency: "eBucks (eB10 = R1)" }
+  ucount:    { name: "Standard Bank UCount",  bank: "Standard Bank",          currency: "Rewards Points (10 = R1)" }
+  discovery: { name: "Discovery Miles",       bank: "Discovery Bank / Vitality", currency: "Discovery Miles (Ð10 = R1)" }
+
+categories:
+  groceries: Groceries
+  fuel: Fuel
+  health_beauty: Health & beauty
+  fashion: Fashion
+  home: Home
+  electronics: Electronics & tech
+  online_retail: Online retail
+  food_drink: Food & drink
+  lifestyle: Lifestyle & leisure
+  travel_transport: Travel & transport
+  services: Services
+  auto: Auto
+  gifts: Gifts
+
+# Logo files in static/logos/ (overlap brands + fuel brands). Logos are used only to identify each partner.
+logos:
+  Clicks: clicks.png
+  Woolworths: woolworths.svg
+  NetFlorist: netflorist.png
+  "Hirsch's": hirschs.png
+  "Pick n Pay": pick-n-pay.png
+  Takealot: takealot.png
+  Superbalist: superbalist.png
+  Yuppiechef: yuppiechef.png
+  OneDayOnly: onedayonly.png
+  "The Golfers Club": the-golfers-club.png
+  Kauai: kauai.png
+  Checkers: checkers.png
+  Makro: makro.png
+  Game: game.png
+  "Exclusive Books": exclusive-books.png
+  UCOOK: ucook.png
+  TaxTim: taxtim.png
+  Engen: engen.png
+  "Astron Energy": astron-energy.png
+  FreshStop: freshstop.png
+  bp: bp.svg
+  Shell: shell.png
+
+brands:
+  # ---------- in all three ----------
+  - name: Clicks
+    category: health_beauty
+    ebucks:    { roles: [earn, spend], note: "Up to 15% (30% on Family Day 15th / Wed 60+), Virtual Card" }
+    ucount:    { roles: [earn, spend], note: "Health & Beauty Rewards, up to 30% (new 2026)" }
+    discovery: { roles: [earn, spend], note: "HealthyCare primary partner, up to 50% (75% headline)" }
+  - name: Woolworths
+    category: groceries
+    ebucks:    { roles: [earn], note: "NEW 1 Oct 2026 — FNB Private Clients / Private Wealth / RMB only; spend-threshold brackets, max R600 / R1,000 pm" }
+    ucount:    { roles: [earn], note: "Choose Your Own Rewards — grocery (up to 20%) and fashion (up to 20%)" }
+    discovery: { roles: [earn, spend], note: "HealthyFood (in-store, online, app, Dash) up to 75%; Miles spend online" }
+  - name: NetFlorist
+    category: gifts
+    ebucks:    { roles: [earn, spend], note: "Online partner" }
+    ucount:    { roles: [earn, spend], note: "Rewards Retailer (Gifts)" }
+    discovery: { roles: [earn, spend], note: "Miles+ Network up to 15%" }
+  - name: Hirsch's
+    category: electronics
+    ebucks:    { roles: [earn, spend], note: "eBucks Partner Shop devices (up to 40/60/100% by account)", confidence: medium }
+    ucount:    { roles: [earn, spend], note: "Rewards Retailer" }
+    discovery: { roles: [spend] }
+
+  # ---------- eBucks + Discovery ----------
+  - name: Pick n Pay
+    category: groceries
+    ebucks:    { roles: [earn, spend], note: "Primary grocer: in-store up to 20%, asap! up to 30% (earn only on asap!)" }
+    discovery: { roles: [spend], note: "Spend in-store (HealthyFood earn ended Aug 2024)" }
+  - name: Takealot
+    category: online_retail
+    ebucks:    { roles: [earn, spend] }
+    discovery: { roles: [spend] }
+  - name: Superbalist
+    category: fashion
+    ebucks:    { roles: [earn, spend] }
+    discovery: { roles: [earn, spend], note: "Miles+ Network" }
+  - name: Yuppiechef
+    category: home
+    ebucks:    { roles: [earn, spend] }
+    discovery: { roles: [spend] }
+  - name: OneDayOnly
+    category: online_retail
+    ebucks:    { roles: [spend] }
+    discovery: { roles: [spend] }
+  - name: The Golfers Club
+    category: lifestyle
+    ebucks:    { roles: [earn, spend], note: "Up to 30% (new 2026)" }
+    discovery: { roles: [spend] }
+  - name: Kauai
+    category: food_drink
+    ebucks:    { roles: [perk], note: "Monthly Kauai reward for 100% card spend" }
+    discovery: { roles: [spend] }
+
+  # ---------- UCount + Discovery ----------
+  - name: Checkers
+    category: groceries
+    ucount:    { roles: [earn, spend], note: "Flagship grocer: in-store up to 30%, Sixty60 up to 40%" }
+    discovery: { roles: [earn], note: "HealthyFood incl. Sixty60" }
+  - name: Makro
+    category: groceries
+    ucount:    { roles: [earn, spend], note: "Rewards Retailer + CYOR grocery/fashion" }
+    discovery: { roles: [spend] }
+  - name: Game
+    category: electronics
+    ucount:    { roles: [earn, spend], note: "Rewards Retailer + CYOR grocery" }
+    discovery: { roles: [spend] }
+  - name: Exclusive Books
+    category: lifestyle
+    ucount:    { roles: [earn], note: "CYOR lifestyle" }
+    discovery: { roles: [earn, spend], note: "Miles+ Network" }
+  - name: UCOOK
+    category: food_drink
+    ucount:    { roles: [earn, spend] }
+    discovery: { roles: [earn], note: "Miles+ Network" }
+
+  # ---------- eBucks + UCount ----------
+  - name: TaxTim
+    category: services
+    ebucks:    { roles: [earn] }
+    ucount:    { roles: [earn], note: "Earn only — not redeemable" }
+
+  # ---------- eBucks only ----------
+  - { name: "Pick n Pay Clothing", category: fashion,          ebucks: { roles: [earn, spend], note: "Up to 20%" } }
+  - { name: Engen,                 category: fuel,             ebucks: { roles: [earn], note: "Up to R8/litre (R4 base + R2 finance + R2 insurance)" } }
+  - { name: ARC,                   category: health_beauty,    ebucks: { roles: [earn, spend], note: "Up to 15% Premier / 30% Private Wealth" } }
+  - { name: "Le Creuset",          category: home,             ebucks: { roles: [earn, spend] } }
+  - { name: Workshop17,            category: services,         ebucks: { roles: [earn, spend] } }
+  - { name: KOODOO,                category: electronics,      ebucks: { roles: [earn, spend] } }
+  - { name: "Mr D",                category: food_drink,       ebucks: { roles: [earn, spend] } }
+  - { name: Intercape,             category: travel_transport, ebucks: { roles: [earn] } }
+  - { name: Tracker,               category: auto,             ebucks: { roles: [earn], note: "Subscription partner" } }
+  - { name: "Autostyle Motorsport", category: auto,            ebucks: { roles: [spend] } }
+  - { name: Entrytime,             category: lifestyle,        ebucks: { roles: [spend] } }
+  - { name: Starbucks,             category: food_drink,       ebucks: { roles: [perk] } }
+  - { name: "The Entertainer",     category: lifestyle,        ebucks: { roles: [perk] } }
+  - { name: Udemy,                 category: lifestyle,        ebucks: { roles: [perk] } }
+  - { name: Avis,                  category: travel_transport, ebucks: { roles: [perk], note: "eBucks Travel car hire" } }
+
+  # ---------- UCount only ----------
+  - { name: "Astron Energy",       category: fuel,      ucount: { roles: [earn, spend], note: "Up to R5/l, R10/l on double Fuel Rewards" } }
+  - { name: FreshStop,             category: fuel,      ucount: { roles: [earn, spend] } }
+  - { name: Shoprite,              category: groceries, ucount: { roles: [earn, spend], note: "In-store up to 30%, Sixty60 up to 40%" } }
+  - { name: "Checkers LiquorShop", category: groceries, ucount: { roles: [earn, spend] } }
+  - { name: "Shoprite LiquorShop", category: groceries, ucount: { roles: [earn, spend] } }
+  - { name: "Makro Liquor",        category: groceries, ucount: { roles: [earn, spend] } }
+  - { name: Samsung,               category: electronics, ucount: { roles: [earn, spend] } }
+  - { name: Click360,              category: electronics, ucount: { roles: [earn, spend] } }
+  - { name: "Faithful to Nature",  category: online_retail, ucount: { roles: [earn, spend] } }
+  - { name: "Olympic Cycles",      category: lifestyle, ucount: { roles: [earn, spend] } }
+  - { name: PetBabies,             category: online_retail, ucount: { roles: [earn, spend] } }
+  - { name: "Petshop Science",     category: online_retail, ucount: { roles: [earn, spend] } }
+  - { name: KFC,                   category: food_drink, ucount: { roles: [earn, spend] } }
+  - { name: "Tiger Wheel & Tyre",  category: auto, ucount: { roles: [earn, spend] } }
+  - { name: "Car Service City",    category: auto, ucount: { roles: [earn, spend] } }
+  - { name: "Woodford Car Hire",   category: travel_transport, ucount: { roles: [earn, spend] } }
+  - { name: SweepSouth,            category: services, ucount: { roles: [earn, spend] } }
+  - { name: AVBOB,                 category: services, ucount: { roles: [earn], note: "Earn only" } }
+  - { name: "Wine of the Month Club", category: gifts, ucount: { roles: [earn, spend] } }
+  - { name: Edgars,                category: fashion, ucount: { roles: [earn], note: "CYOR fashion" } }
+  - { name: Foschini,              category: fashion, ucount: { roles: [earn], note: "CYOR fashion" } }
+  - { name: Jet,                   category: fashion, ucount: { roles: [earn], note: "CYOR fashion" } }
+  - { name: "Country Road",        category: fashion, ucount: { roles: [earn], note: "CYOR fashion" } }
+  - { name: Trenery,               category: fashion, ucount: { roles: [earn], note: "CYOR fashion" } }
+  - { name: Witchery,              category: fashion, ucount: { roles: [earn], note: "CYOR fashion" } }
+  - { name: "The Fix",             category: fashion, ucount: { roles: [earn], note: "CYOR fashion" } }
+  - { name: "Mugg & Bean",         category: food_drink, ucount: { roles: [earn], note: "CYOR lifestyle" } }
+  - { name: Wimpy,                 category: food_drink, ucount: { roles: [earn], note: "CYOR lifestyle" } }
+  - { name: "Ocean Basket",        category: food_drink, ucount: { roles: [earn], note: "CYOR lifestyle" } }
+  - { name: Steers,                category: food_drink, ucount: { roles: [earn], note: "CYOR lifestyle" } }
+  - { name: Debonairs,             category: food_drink, ucount: { roles: [earn], note: "CYOR lifestyle" } }
+  - { name: "Virgin Active",       category: lifestyle, ucount: { roles: [earn], note: "CYOR lifestyle" } }
+  - { name: "Planet Fitness",      category: lifestyle, ucount: { roles: [earn], note: "CYOR lifestyle" } }
+  - { name: "Ster-Kinekor",        category: lifestyle, ucount: { roles: [earn], note: "CYOR lifestyle" } }
+  - { name: NuMetro,               category: lifestyle, ucount: { roles: [earn], note: "CYOR lifestyle" } }
+  # Other UCount CYOR lifestyle (earn): Bargain Books, Reader's Warehouse, Fego Caffe, LUPA Osteria, MYTHOS,
+  #   Salsa Mexican Grill, Turn 'n Tender, Vovo Telo, Viva Gym, Fishaways, Milky Lane, Romans Pizza.
+  # Other UCount retailers (earn+spend): Courier Connexion, EZ Shuttle, Feenix, Gift of the Givers, IBV, Netstar,
+  #   School-Days, Tekkie Tax, Varsity-Days, admyt.
+
+  # ---------- Discovery only ----------
+  - { name: bp,                    category: fuel,          discovery: { roles: [earn], note: "Fuel up to 10–20% by product; +Vitality Drive" } }
+  - { name: Shell,                 category: fuel,          discovery: { roles: [earn], note: "Select stations" } }
+  - { name: Uber,                  category: travel_transport, discovery: { roles: [earn] } }
+  - { name: "Dis-Chem",            category: health_beauty, discovery: { roles: [earn, spend], note: "HealthyCare; left UCount 28 Feb 2026" } }
+  - { name: "Babies R Us",         category: health_beauty, discovery: { roles: [earn, spend], note: "HealthyBaby" } }
+  - { name: "Toys R Us",           category: lifestyle,     discovery: { roles: [earn, spend], note: "HealthyBaby" } }
+  - { name: "Cape Union Mart",     category: fashion,       discovery: { roles: [earn, spend], note: "Miles+ Network" } }
+  - { name: ALDO,                  category: fashion,       discovery: { roles: [earn, spend], note: "Miles+ Network" } }
+  - { name: "Old Khaki",           category: fashion,       discovery: { roles: [earn, spend], note: "Miles+ Network" } }
+  - { name: Poetry,                category: fashion,       discovery: { roles: [earn, spend], note: "Miles+ Network" } }
+  - { name: Volpes,                category: home,          discovery: { roles: [earn], note: "Miles+ Network" } }
+  - { name: Nespresso,             category: food_drink,    discovery: { roles: [earn, spend], note: "Miles+ Network" } }
+  - { name: "Dial-a-Bed",          category: home,          discovery: { roles: [earn, spend], note: "Miles+ Network" } }
+  - { name: Incredible,            category: electronics,   discovery: { roles: [earn, spend], note: "Miles+ Network" } }
+  - { name: "Jasper & Jute",       category: home,          discovery: { roles: [earn, spend], note: "Miles+ Network" } }
+  - { name: Kloppers,              category: home,          discovery: { roles: [earn], note: "Miles+ Network" } }
+  - { name: iStore,                category: electronics,   discovery: { roles: [spend], note: "Left eBucks 1 Jul 2026" } }
+  - { name: "Sportsmans Warehouse", category: lifestyle,    discovery: { roles: [spend] } }
+  - { name: Totalsports,           category: fashion,       discovery: { roles: [spend] } }
+  - { name: "Nando's",             category: food_drink,    discovery: { roles: [spend] } }
+  - { name: "Vida e Caffe",        category: food_drink,    discovery: { roles: [spend] } }
+  - { name: Zando,                 category: fashion,       discovery: { roles: [spend] } }
+  - { name: Loot,                  category: online_retail, discovery: { roles: [spend] } }
+  - { name: "Booking.com",         category: travel_transport, discovery: { roles: [spend] } }
+  # Other Discovery spend partners: Bob Shop, Call It Spring, Coricraft, Daddy's Deals, Forever New, Outdoor Warehouse,
+  #   Pandora, Safari Outdoor, Surfers Emporium, TechMarkit, The Watch Boutique, Toy Kingdom, Sunglass Hut, WeFix, The Pro Shop.
+
+# Partners that recently LEFT a programme (useful for a "what changed" note)
+departures:
+  - { brand: SPAR,              programme: ebucks, date: 2026-09-30, note: "Earn and spend ended; replaced by Woolworths for Private clients" }
+  - { brand: "Supa Quick",      programme: ebucks, date: 2026-07-01 }
+  - { brand: iStore,            programme: ebucks, date: 2026-07-01 }
+  - { brand: "Checkers/Shoprite", programme: ebucks, date: 2025-03-31, note: "Moved to UCount" }
+  - { brand: "Dis-Chem",        programme: ucount, date: 2026-02-28 }
+  - { brand: "Pick n Pay",      programme: discovery, date: 2024-08-31, note: "HealthyFood earn ended; still a Miles spend partner" }
