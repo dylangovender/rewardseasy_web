@@ -1,0 +1,12 @@
+{{- /* One coloured chip per programme a brand belongs to, e.g. "E·S" (earn & spend). */ -}}
+{{- $b := . -}}
+{{- $letter := dict "earn" "E" "spend" "S" "perk" "P" -}}
+<span class="pchips">
+  {{- range $p := slice "ebucks" "ucount" "discovery" -}}
+    {{- with index $b $p -}}
+      {{- $letters := slice -}}
+      {{- range .roles }}{{ $letters = $letters | append (index $letter .) }}{{ end -}}
+      <span class="pchip pchip-{{ $p }}" title="{{ (index site.Data.partners.programmes $p).name }}: {{ delimit .roles " & " }}">{{ delimit $letters "·" }}</span>
+    {{- end -}}
+  {{- end -}}
+</span>

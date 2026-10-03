@@ -1,0 +1,6 @@
+{{- /* Returns which programmes a brand belongs to, e.g. "EUD", "ED", "U". */ -}}
+{{- $k := "" -}}
+{{- if .ebucks }}{{ $k = print $k "E" }}{{ end -}}
+{{- if .ucount }}{{ $k = print $k "U" }}{{ end -}}
+{{- if .discovery }}{{ $k = print $k "D" }}{{ end -}}
+{{- return $k -}}
