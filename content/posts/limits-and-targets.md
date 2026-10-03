@@ -25,14 +25,35 @@ Same across all four accounts (pay with Virtual Card):
 |---|---|---|---|---|---|
 | Pick n Pay asap! (online groceries) | 2% | 5% | 10% | 15% | **30%** |
 | Pick n Pay in-store | 1.5% | 3% | 6% | 10% | **20%** |
-| SPAR (opt in; incl. SPAR2U) | 1% | 2.5% | 5% | 7.5% | **15%** |
 | Pick n Pay Clothing (standalone) | 1.5% | 3% | 6% | 10% | **20%** |
 | Clicks (health & beauty) | — | — | — | — | **15%** |
-| ARC | 2% | 5% | 10% | 15% | **30%** |
+| ARC (Private Wealth / RMB; Premier max 15%) | 2% | 5% | 10% | 15% | **30%** |
 | FNB Life Insurance | 1% | 2.5% | 15% | 25% | **40%** |
 | FNB Car / Home Insurance, FNB Connect | 1% | 2.5% | 5% | 7.5% | **15%** |
 
 **Clicks doubles to 30%** on the 15th (Clicks Family Day, with a linked spouse/FNBy account) and on Wednesdays for clients 60+.
+
+{{< notice info "Grocer change" >}}
+SPAR stopped being an eBucks earn and spend partner on 30 September 2026. Pick n Pay is now the only eBucks grocer for everyone, plus Woolworths for Private clients (below).
+{{< /notice >}}
+
+### Woolworths (from 1 October 2026, Private clients only)
+
+Not a percentage: you get a fixed reward for the highest monthly spend threshold you reach at Woolworths, Woolworths Food, online and Woolies Dash. Pay with your Virtual Card. **Premier doesn't qualify.**
+
+| Private Clients: monthly spend | L1 | L2 | L3 | L4 | L5 |
+|---|---|---|---|---|---|
+| R1,000 | R10 | R15 | R20 | R40 | **R60** |
+| R2,500 | R30 | R40 | R55 | R110 | **R175** |
+| R4,000+ | R90 | R110 | R165 | R350 | **R600** |
+
+| Private Wealth / RMB: monthly spend | L1 | L2 | L3 | L4 | L5 |
+|---|---|---|---|---|---|
+| R1,500 | R20 | R30 | R40 | R80 | **R120** |
+| R2,500 | R60 | R80 | R110 | R220 | **R350** |
+| R6,500+ | R180 | R220 | R330 | R700 | **R1,000** |
+
+At Level 5 the top bracket works out to about **15% back**.
 
 ### Devices & appliances (eBucks Partner Shop, over 24 months)
 
@@ -59,7 +80,7 @@ You earn the rates above only up to these monthly spends (or **20% of your total
 
 | Category | Premier | Private Clients | Private Wealth |
 |---|---|---|---|
-| Groceries (PnP, asap!, SPAR, Checkers) | R3,000 | R6,000\* | R10,000\* |
+| Groceries (Pick n Pay + asap!) | R3,000 | R6,000\* | R10,000\* |
 | Clicks | R2,000 | R2,500\* | R3,000\* |
 | Engen fuel | R2,000 | R2,500 | R3,000 |
 | Pick n Pay Clothing | R1,000\* | R2,000\* | R3,000\* |
