@@ -1,0 +1,9 @@
+{{- /* One chip per scheme showing its best earn rate, e.g. "30%", "R8/ℓ", "75%*". */ -}}
+{{- $b := . -}}
+<span class="pchips">
+  {{- range $p := slice "ebucks" "ucount" "discovery" -}}
+    {{- with index $b $p -}}
+      <span class="pchip pchip-{{ $p }}" title="{{ (index site.Data.partners.programmes $p).name }}: up to {{ .label }}{{ if .star }} on qualifying items{{ end }}">{{ .label }}{{ if .star }}*{{ end }}</span>
+    {{- end -}}
+  {{- end -}}
+</span>

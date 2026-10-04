@@ -1,0 +1,88 @@
+{{- /* Grouped horizontal bars: best earn rate per scheme at the everyday shops, on one % axis. */ -}}
+{{- $d := site.Data.key_retailers -}}
+{{- $names := dict "ebucks" "eBucks" "ucount" "UCount" "discovery" "Discovery" -}}
+{{- $axisMax := 80.0 -}}
+<figure class="krates">
+  <div class="krates-legend" aria-hidden="true">
+    <span><span class="pkey pkey-ebucks"></span>eBucks</span>
+    <span><span class="pkey pkey-ucount"></span>UCount</span>
+    <span><span class="pkey pkey-discovery"></span>Discovery</span>
+  </div>
+  <div class="krates-plot" role="list">
+    {{- range $c := $d.categories }}
+    <div class="krates-cat">{{ $c.label }}</div>
+      {{- range $b := $d.brands }}
+        {{- if eq $b.category $c.key }}
+    <div class="krates-row" role="listitem">
+      <div class="krates-brand">{{ $b.name }}</div>
+      <div class="krates-bars">
+          {{- range $p := slice "ebucks" "ucount" "discovery" }}
+            {{- with index $b $p }}
+              {{- $w := div (mul .max 100.0) $axisMax }}
+              {{- $val := printf "%s%s" .label (cond (default false .star) "*" "") }}
+              {{- if eq $b.category "fuel" }}{{ if ne .label (printf "%v%%" .max) }}{{ $val = printf "%s · ≈%.0f%%" .label .max }}{{ end }}{{ end }}
+        <div class="krates-line">
+          <span class="krates-bar kb-{{ $p }}" style="width: {{ printf "%.2f" $w }}%" tabindex="0"
+                data-brand="{{ $b.name }}" data-scheme="{{ index $names $p }}" data-value="{{ $val }}" data-note="{{ .note }}"
+                aria-label="{{ $b.name }}, {{ index $names $p }}: up to {{ $val }}. {{ .note }}"></span>
+          <span class="krates-val">{{ $val }}</span>
+        </div>
+            {{- end }}
+          {{- end }}
+      </div>
+    </div>
+        {{- end }}
+      {{- end }}
+    {{- end }}
+    <div class="krates-axis" aria-hidden="true">
+      <span style="left:0%">0%</span><span style="left:25%">20%</span><span style="left:50%">40%</span><span style="left:75%">60%</span><span style="left:100%">80%</span>
+    </div>
+  </div>
+  <div class="krates-tip" role="tooltip" hidden></div>
+  <figcaption class="krates-caption">Best rate at each scheme's top tier with its best card or channel. Fuel per-litre rewards converted at {{ $d.fuel_price.label }}. * HealthyFood/HealthyCare apply to qualifying healthy items only.</figcaption>
+  <details class="krates-table">
+    <summary>Show as a table, with the conditions</summary>
+    <div class="ptable-scroll">
+      <table class="ptable">
+        <thead><tr><th scope="col">Brand</th><th scope="col">eBucks</th><th scope="col">UCount</th><th scope="col">Discovery</th></tr></thead>
+        <tbody>
+          {{- range $b := $d.brands }}
+          <tr>
+            <th scope="row">{{ $b.name }}</th>
+            {{- range $p := slice "ebucks" "ucount" "discovery" }}
+            <td class="pcell">{{ with index $b $p }}<b>{{ .label }}{{ if .star }}*{{ end }}</b><span class="pnote">{{ .note }}</span>{{ else }}<span class="pnone" title="No earn partnership">—</span>{{ end }}</td>
+            {{- end }}
+          </tr>
+          {{- end }}
+        </tbody>
+      </table>
+    </div>
+  </details>
+</figure>
+<script>
+(function () {
+  var fig = document.currentScript.previousElementSibling;
+  if (!fig || !fig.classList.contains('krates')) return;
+  var tip = fig.querySelector('.krates-tip');
+  function show(bar, x, y) {
+    tip.textContent = '';
+    var v = document.createElement('strong'); v.textContent = 'Up to ' + bar.dataset.value; tip.appendChild(v);
+    var s = document.createElement('div'); s.className = 'krates-tip-who';
+    var key = document.createElement('span'); key.className = 'krates-tip-key ' + bar.className.split(' ')[1]; s.appendChild(key);
+    s.appendChild(document.createTextNode(bar.dataset.scheme + ' at ' + bar.dataset.brand)); tip.appendChild(s);
+    var n = document.createElement('div'); n.className = 'krates-tip-note'; n.textContent = bar.dataset.note; tip.appendChild(n);
+    tip.hidden = false;
+    var fr = fig.getBoundingClientRect(), br = bar.getBoundingClientRect();
+    var left = (x != null ? x : br.right) - fr.left + 12, top = (y != null ? y : br.top) - fr.top + 12;
+    left = Math.min(left, fig.clientWidth - tip.offsetWidth - 4);
+    tip.style.left = Math.max(0, left) + 'px'; tip.style.top = top + 'px';
+  }
+  function hide() { tip.hidden = true; }
+  fig.querySelectorAll('.krates-bar').forEach(function (bar) {
+    bar.addEventListener('pointermove', function (e) { show(bar, e.clientX, e.clientY); });
+    bar.addEventListener('pointerleave', hide);
+    bar.addEventListener('focus', function () { show(bar); });
+    bar.addEventListener('blur', hide);
+  });
+})();
+</script>

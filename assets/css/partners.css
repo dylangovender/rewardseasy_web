@@ -1,4 +1,4 @@
-/* Partner overlap page: Venn diagram, fuel row and full partner table.
+/* Partner pages: two Venn diagrams, fuel row, earn-rate chart and partner tables.
    Scheme colours validated with the dataviz palette checker (light + dark). */
 :root {
   --p-ebucks: #00939e;
@@ -144,6 +144,15 @@
 .r-EUD .ptile img { height: 3.4cqi; }
 .ptile-name { color: #111; font-size: max(11px, 1.3cqi); font-weight: 600; text-align: center; line-height: 1.2; }
 
+/* Key-shops Venn: wider tiles (rate chips), clusters solved for its regions. */
+.pvenn--key .ptile { width: 10.5cqi; }
+.pvenn--key .ptile img { height: 3cqi; }
+.pvenn--key .r-E   { left: 20.5%; top: 29.3%; width: 22cqi; }                  /* rows 2/1 */
+.pvenn--key .r-D   { left: 79.5%; top: 29.3%; width: 22cqi; }
+.pvenn--key .r-U   { left: 50%;   top: 79.8%; width: 34cqi; }                  /* one row of 3 */
+.pvenn--key .r-UD  { left: 71%;   top: 56.6%; width: 11cqi; }
+.pvenn--key .r-EUD { left: 50%;   top: 44.4%; width: 22.5cqi; }
+
 .pchips { display: flex; gap: 3px; justify-content: center; flex-wrap: wrap; }
 .pchip {
   display: inline-block;
@@ -189,6 +198,7 @@
   }
   .pvenn-cluster .ptile, .r-EUD .ptile { width: 92px; padding: 6px 5px 5px; gap: 5px; }
   .pvenn-cluster .ptile img, .r-EUD .ptile img { height: 28px; }
+  .pvenn--key .pvenn-cluster .ptile { width: 104px; }
   .pchip { font-size: 10px; }
 }
 
@@ -204,6 +214,70 @@
 .pfuel .ptile img { height: 34px; }
 .pfuel .pchip { font-size: 10px; }
 @media (max-width: 640px) { .pfuel { grid-template-columns: 1fr; } }
+
+/* ---------- Earn-rate chart (grouped horizontal bars, one % axis) ---------- */
+.krates { position: relative; margin: 1.5rem 0 2.5rem; text-align: left; }
+.krates-legend { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; font-size: .9rem; color: var(--p-muted); margin-bottom: .5rem; }
+.krates-cat {
+  margin: 1.2rem 0 .3rem;
+  font-size: .78rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--p-muted);
+}
+.krates-row {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  align-items: center;
+  padding: .4rem 0;
+  border-top: 1px solid var(--p-grid);
+}
+.krates-brand { font-weight: 600; font-size: .95rem; }
+.krates-bars {
+  display: flex; flex-direction: column; gap: 2px;   /* 2px surface gap between a brand's bars */
+  margin-right: 7.5rem;                               /* room for tip labels past the longest bar */
+  padding: 2px 0;
+  background-image: linear-gradient(to right, var(--p-grid) 1px, transparent 1px);
+  background-size: 25% 100%;
+  box-shadow: inset -1px 0 0 var(--p-grid);           /* the 80% line */
+}
+.krates-line { display: flex; align-items: center; height: 16px; }
+.krates-bar {
+  display: block; flex: none;
+  height: 14px; min-width: 3px;
+  border-radius: 0 4px 4px 0;                         /* rounded data-end, square at the baseline */
+  cursor: default;
+}
+.krates-bar:hover, .krates-bar:focus-visible { filter: brightness(1.15); outline: 2px solid var(--p-muted); outline-offset: 1px; }
+.krates-bar:focus:not(:focus-visible) { outline: none; }
+.kb-ebucks    { background: var(--p-ebucks); }
+.kb-ucount    { background: var(--p-ucount); }
+.kb-discovery { background: var(--p-discovery); }
+.krates-val { margin-left: .45rem; font-size: .82rem; font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.krates-axis {
+  position: relative; height: 1.5rem;
+  margin: 0 7.5rem 0 8.5rem;
+  border-top: 1px solid var(--p-grid);
+  font-size: .75rem; color: var(--p-muted); font-variant-numeric: tabular-nums;
+}
+.krates-axis span { position: absolute; top: .3rem; transform: translateX(-50%); }
+.krates-tip {
+  position: absolute; z-index: 5; pointer-events: none;
+  max-width: 19rem; padding: .55rem .7rem;
+  background: var(--p-tip-bg); border: 1px solid var(--p-tile-border); border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .14);
+  font-size: .82rem; line-height: 1.35;
+}
+.krates-tip strong { display: block; font-size: 1.05rem; }
+.krates-tip-who { color: var(--p-muted); margin: .1rem 0 .35rem; }
+.krates-tip-key { display: inline-block; width: 12px; height: 3px; border-radius: 2px; margin-right: .45em; vertical-align: middle; }
+.krates-caption { font-size: .85rem; color: var(--p-muted); margin-top: .6rem; }
+.krates-table { margin-top: .9rem; }
+.krates-table summary { cursor: pointer; font-size: .92rem; }
+.krates-table .pcell b { display: block; }
+@media (max-width: 640px) {
+  .krates-row { grid-template-columns: 1fr; gap: .25rem; }
+  .krates-bars { margin-right: 6.5rem; }
+  .krates-axis { margin: 0 6.5rem 0 0; }
+}
 
 /* ---------- Full partner table ---------- */
 .ptable-tools { display: flex; flex-wrap: wrap; gap: .6rem 1rem; align-items: center; margin: 1rem 0 .75rem; }

@@ -1,0 +1,39 @@
+{{- /* Venn of the everyday shops people compare. Circles = where you EARN; chips = best earn rate. */ -}}
+{{- $d := site.Data.key_retailers -}}
+{{- $logos := site.Data.partners.logos -}}
+{{- $labels := dict "EUD" "Earn in all three" "ED" "eBucks + Discovery" "UD" "UCount + Discovery" "EU" "eBucks + UCount" "E" "eBucks only" "U" "UCount only" "D" "Discovery only" -}}
+<figure class="pvenn-wrap">
+  <div class="pvenn pvenn--key">
+    <svg class="pvenn-bg" viewBox="0 0 1000 990" aria-hidden="true" focusable="false">
+      <circle class="c-ebucks"    cx="345" cy="345" r="330"/>
+      <circle class="c-discovery" cx="655" cy="345" r="330"/>
+      <circle class="c-ucount"    cx="500" cy="610" r="330"/>
+    </svg>
+    <span class="pvenn-label l-ebucks">FNB eBucks</span>
+    <span class="pvenn-label l-discovery">Discovery Miles</span>
+    <span class="pvenn-label l-ucount">Standard Bank UCount</span>
+    {{- range $region := slice "EUD" "ED" "UD" "EU" "E" "U" "D" }}
+      {{- $n := 0 }}
+      {{- range $d.brands }}{{ if eq (partial "partner-key.html" .) $region }}{{ $n = add $n 1 }}{{ end }}{{ end }}
+      {{- if gt $n 0 }}
+    <div class="pvenn-cluster r-{{ $region }}" data-label="{{ index $labels $region }}">
+        {{- range $d.brands }}
+          {{- if eq (partial "partner-key.html" .) $region }}
+            {{- $logo := index $logos .name }}
+      <div class="ptile">
+        {{- if $logo }}<img src="{{ printf "logos/%s" $logo | relURL }}" alt="{{ .name }}" loading="lazy">{{ else }}<span class="ptile-name">{{ .name }}</span>{{ end }}
+        {{ partial "rate-chips.html" . }}
+      </div>
+          {{- end }}
+        {{- end }}
+    </div>
+      {{- end }}
+    {{- end }}
+  </div>
+  <figcaption class="pvenn-legend">
+    <span><span class="pkey pkey-ebucks"></span>eBucks</span>
+    <span><span class="pkey pkey-ucount"></span>UCount</span>
+    <span><span class="pkey pkey-discovery"></span>Discovery</span>
+    <span class="pvenn-key">Best rate at the top tier · fuel in rand per litre · * qualifying healthy items only</span>
+  </figcaption>
+</figure>
