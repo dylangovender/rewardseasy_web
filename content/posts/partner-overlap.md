@@ -22,6 +22,12 @@ Every scheme's best rate on one scale. Fuel rewards are paid per litre by eBucks
 
 {{< key-rates >}}
 
+### What it takes to get each rate
+
+These are best-case numbers. Here's the tier, card and fine print behind each one.
+
+{{< key-conditions >}}
+
 ## Every brand in more than one scheme
 
 Beyond the everyday shops, these are all the brands shared between schemes. Each logo shows whether you can **earn (E)**, **spend (S)** or get a **perk (P)** there.

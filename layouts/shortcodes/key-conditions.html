@@ -1,0 +1,22 @@
+{{- /* The conditions behind each best earn rate, grouped by category. Doubles as the chart's table view. */ -}}
+{{- $d := site.Data.key_retailers -}}
+<div class="ptable-scroll">
+  <table class="ptable pconditions">
+    <thead><tr><th scope="col">Shop</th><th scope="col" class="h-ebucks">eBucks</th><th scope="col" class="h-ucount">UCount</th><th scope="col" class="h-discovery">Discovery</th></tr></thead>
+    <tbody>
+      {{- range $c := $d.categories }}
+      <tr class="pgroup"><th scope="rowgroup" colspan="4">{{ $c.label }}</th></tr>
+        {{- range $b := $d.brands }}
+          {{- if eq $b.category $c.key }}
+      <tr>
+        <th scope="row">{{ $b.name }}</th>
+            {{- range $p := slice "ebucks" "ucount" "discovery" }}
+        <td class="pcell">{{ with index $b $p }}<b class="prate">{{ .label }}{{ if .star }}*{{ end }}</b><span class="pnote">{{ .note }}</span>{{ else }}<span class="pnone" title="No earn partnership">—</span>{{ end }}</td>
+            {{- end }}
+      </tr>
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    </tbody>
+  </table>
+</div>

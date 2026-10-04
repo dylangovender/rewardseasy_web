@@ -272,9 +272,6 @@
 .krates-tip-who { color: var(--p-muted); margin: .1em 0 .35em; }
 .krates-tip-key { display: inline-block; width: 12px; height: 3px; border-radius: 2px; margin-right: .45em; vertical-align: middle; }
 .krates-caption { font-size: .85em; color: var(--p-muted); margin-top: .6em; }
-.krates-table { margin-top: .9em; }
-.krates-table summary { cursor: pointer; font-size: .92em; }
-.krates-table .pcell b { display: block; }
 @media (max-width: 640px) {
   .krates-row { grid-template-columns: 1fr; gap: .25em; }
   .krates-bars { margin-right: 6.5em; }
@@ -323,3 +320,13 @@ body .post-content table.ptable thead tr > th { border-bottom: 2px solid var(--p
 .pbadge-perk  { color: var(--p-perk); }
 .pnote { display: block; color: var(--p-muted); font-size: .85em; line-height: 1.4; margin-top: .1em; }
 .pnone { color: var(--p-muted); opacity: .6; }
+
+/* ---------- Conditions table (everyday shops) ---------- */
+body .post-content table.pconditions tr.pgroup > th {
+  padding-top: 1.3em;
+  font-size: .78em; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--p-muted);
+  border-bottom: 1px solid var(--p-tile-border) !important;
+}
+.pconditions .prate { display: block; font-size: 1.05em; }
+.pconditions td, .pconditions tbody th { width: 25%; }

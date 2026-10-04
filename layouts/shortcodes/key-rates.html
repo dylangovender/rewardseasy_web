@@ -39,25 +39,7 @@
     </div>
   </div>
   <div class="krates-tip" role="tooltip" hidden></div>
-  <figcaption class="krates-caption">Best rate at each scheme's top tier with its best card or channel. Fuel per-litre rewards converted at {{ $d.fuel_price.label }}. * HealthyFood/HealthyCare apply to qualifying healthy items only.</figcaption>
-  <details class="krates-table">
-    <summary>Show as a table, with the conditions</summary>
-    <div class="ptable-scroll">
-      <table class="ptable">
-        <thead><tr><th scope="col">Brand</th><th scope="col">eBucks</th><th scope="col">UCount</th><th scope="col">Discovery</th></tr></thead>
-        <tbody>
-          {{- range $b := $d.brands }}
-          <tr>
-            <th scope="row">{{ $b.name }}</th>
-            {{- range $p := slice "ebucks" "ucount" "discovery" }}
-            <td class="pcell">{{ with index $b $p }}<b>{{ .label }}{{ if .star }}*{{ end }}</b><span class="pnote">{{ .note }}</span>{{ else }}<span class="pnone" title="No earn partnership">—</span>{{ end }}</td>
-            {{- end }}
-          </tr>
-          {{- end }}
-        </tbody>
-      </table>
-    </div>
-  </details>
+  <figcaption class="krates-caption">Best rate at each scheme's top tier with its best card or channel. Fuel per-litre rewards converted at {{ $d.fuel_price.label }}. * HealthyFood/HealthyCare apply to qualifying healthy items only. The conditions behind every bar are in the table below.</figcaption>
 </figure>
 <script>
 (function () {
