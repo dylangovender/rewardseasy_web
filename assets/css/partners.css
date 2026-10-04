@@ -292,8 +292,17 @@
 
 .ptable-scroll { overflow-x: auto; }
 .ptable { width: 100%; border-collapse: collapse; font-size: .9em; line-height: 1.45; }
-.ptable th, .ptable td { padding: .5em .6em; border-bottom: 1px solid var(--p-tile-border); text-align: left; vertical-align: top; }
-.ptable thead th { position: sticky; top: 0; background: var(--p-page-bg); font-size: .85em; text-transform: uppercase; letter-spacing: .03em; }
+.ptable th, .ptable td { padding: .5em .6em; text-align: left; vertical-align: top; }
+/* The theme draws 2px borders round every table cell and drops some on the first/last rows,
+   which left half-width lines above the first and below the last row. Reset them for our
+   tables and draw one full-width line under every row instead. */
+body .post-content table.ptable tr > th,
+body .post-content table.ptable tr > td {
+  border: 0 !important;
+  border-bottom: 1px solid var(--p-tile-border) !important;
+}
+body .post-content table.ptable thead tr > th { border-bottom: 2px solid var(--p-muted) !important; }
+.ptable thead th { font-size: .85em; text-transform: uppercase; letter-spacing: .03em; }
 .ptable thead .h-ebucks::before, .ptable thead .h-ucount::before, .ptable thead .h-discovery::before {
   content: ""; display: inline-block; width: .7em; height: .7em; border-radius: 2px; margin-right: .4em;
 }
