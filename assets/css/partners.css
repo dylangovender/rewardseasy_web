@@ -53,7 +53,7 @@
 
 /* ---------- Venn ---------- */
 /* Break out of the text column on wide screens so the logos stay legible. */
-.pvenn-wrap {
+.content figure.pvenn-wrap {   /* beats the theme's ".content figure { margin: 0 }" */
   width: min(1100px, calc(100vw - 4rem));
   position: relative;
   left: 50%;
@@ -182,7 +182,7 @@
 /* Narrow screens: the tiles can't shrink with the circles below this width, so drop the
    circles and show labelled groups instead. */
 @media (max-width: 900px) {
-  .pvenn-wrap { width: auto; left: auto; transform: none; }
+  .content figure.pvenn-wrap { width: auto; left: auto; transform: none; }
   .pvenn { aspect-ratio: auto; container-type: normal; }
   .pvenn-bg, .pvenn-label, .pvenn-solo { display: none; }
   .pvenn-cluster {
@@ -216,7 +216,7 @@
 @media (max-width: 640px) { .pfuel { grid-template-columns: 1fr; } }
 
 /* ---------- Earn-rate chart (grouped horizontal bars, one % axis) ---------- */
-.krates { position: relative; margin: 1.5em 0 2.5em; text-align: left; line-height: 1.4; }
+.content figure.krates { position: relative; margin: 1.5em 0 2.5em; text-align: left; line-height: 1.4; }
 .krates-legend { display: flex; flex-wrap: wrap; gap: .4em 1.4em; font-size: .9em; color: var(--p-muted); margin-bottom: .5em; }
 .krates-cat {
   margin: 1.2em 0 .3em;
