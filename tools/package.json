@@ -1,0 +1,12 @@
+{
+  "name": "rewardseasy-tools",
+  "private": true,
+  "type": "module",
+  "description": "Headless-Chrome helpers for checking and researching the site. Not part of the Hugo build.",
+  "scripts": {
+    "check:venn": "node check-venn.mjs"
+  },
+  "dependencies": {
+    "puppeteer-core": "^25.12.0"
+  }
+}
