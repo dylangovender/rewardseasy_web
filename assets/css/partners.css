@@ -58,7 +58,7 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  margin: 2em 0 2.5em;
+  margin: 4em 0 2.5em;  /* top room for the scheme labels */
 }
 .pvenn {
   position: relative;
@@ -75,6 +75,7 @@
   position: absolute;
   font-weight: 700;
   font-size: max(13px, 2.2cqi);
+  line-height: 1.2;
   white-space: nowrap;
 }
 .pvenn-label::before {
@@ -85,8 +86,9 @@
   margin-right: .4em;
   vertical-align: .02em;
 }
-.l-ebucks    { left: 3%;  top: 3%; }
-.l-discovery { right: 3%; top: 3%; }
+/* Top labels sit just above the diagram box so they never touch a circle. */
+.l-ebucks    { left: 2%;  bottom: 100%; margin-bottom: .15em; }
+.l-discovery { right: 2%; bottom: 100%; margin-bottom: .15em; }
 .l-ucount    { left: 50%; bottom: 0; transform: translateX(-50%); }
 .l-ebucks::before    { background: var(--p-ebucks); }
 .l-discovery::before { background: var(--p-discovery); }
@@ -182,7 +184,7 @@
 /* Narrow screens: the tiles can't shrink with the circles below this width, so drop the
    circles and show labelled groups instead. */
 @media (max-width: 900px) {
-  .content figure.pvenn-wrap { width: auto; left: auto; transform: none; }
+  .content figure.pvenn-wrap { width: auto; left: auto; transform: none; margin-top: 1.5em; }
   .pvenn { aspect-ratio: auto; container-type: normal; }
   .pvenn-bg, .pvenn-label, .pvenn-solo { display: none; }
   .pvenn-cluster {
