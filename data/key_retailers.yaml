@@ -1,0 +1,62 @@
+# The everyday shops people compare: best possible EARN rate per scheme.
+# "max" = highest standard rate at the top tier/level with the best card/channel, as % of spend.
+# Fuel per-litre rewards are converted to % at fuel_price so all schemes share one scale.
+# Spend-only links (e.g. paying with Discovery Miles at Pick n Pay or Makro) are not earn and are left out.
+# Researched 3–4 October 2026.
+
+fuel_price:
+  rand_per_litre: 26.92
+  label: "R26.92/ℓ (inland 95 unleaded, September 2026; a rise to about R29.75 is forecast for 7 October)"
+
+categories:
+  - { key: fuel,          label: "Fuel" }
+  - { key: groceries,     label: "Groceries" }
+  - { key: health_beauty, label: "Health & beauty" }
+
+brands:
+  # ---------- fuel ----------
+  - name: Engen
+    category: fuel
+    ebucks:    { max: 29.7, label: "R8/ℓ", note: "R4/ℓ base (≈14.9%) at Level 5 with the Virtual Card, +R2 with WesBank/Toyota finance, +R2 with FNB car insurance. Capped at R2,000–R3,000 fuel spend a month." }
+  - name: "Astron Energy"
+    category: fuel
+    ucount:    { max: 37.1, label: "R10/ℓ", note: "Tier 5 credit card with double Fuel Rewards (all spend on a Standard Bank credit card). Standard rate R5/ℓ (≈18.6%). Capped at R2,500 fuel spend a cycle." }
+  - name: bp
+    category: fuel
+    discovery: { max: 20, label: "20%", note: "Purple Suite. Black/Platinum 15%, Gold 10%. Needs Vitality Money; Vitality Drive can add more." }
+  - name: Shell
+    category: fuel
+    discovery: { max: 20, label: "20%", note: "Select Shell stations. Purple Suite; Black/Platinum 15%, Gold 10%." }
+
+  # ---------- groceries ----------
+  - name: "Pick n Pay"
+    category: groceries
+    ebucks:    { max: 30, label: "30%", note: "Pick n Pay asap! online at Level 5. In-store up to 20%. Grocery cap R3,000 (Premier) to R10,000 a month." }
+  - name: Checkers
+    category: groceries
+    ucount:    { max: 40, label: "40%", note: "Checkers Sixty60, Tier 5 virtual credit card. In-store up to 30%." }
+    discovery: { max: 75, label: "75%", star: true, note: "HealthyFood: qualifying healthy items only. Purple Suite with Vitality Health; Black/Platinum 50%, Gold 40%. Monthly cap applies." }
+  - name: Shoprite
+    category: groceries
+    ucount:    { max: 40, label: "40%", note: "Shoprite Sixty60, Tier 5 virtual credit card. In-store up to 30%." }
+  - name: Makro
+    category: groceries
+    ucount:    { max: 20, label: "20%", note: "Choose Your Own Rewards grocery category, Tier 5 credit card." }
+  - name: Woolworths
+    category: groceries
+    ebucks:    { max: 15, label: "15%", note: "From 1 Oct 2026, FNB Private Clients / Private Wealth / RMB only. Fixed reward at spend thresholds: R600 on R4,000 (PC) or R1,000 on R6,500 (PW) at Level 5." }
+    ucount:    { max: 20, label: "20%", note: "Choose Your Own Rewards grocery (or fashion) category, Tier 5 credit card." }
+    discovery: { max: 75, label: "75%", star: true, note: "HealthyFood: qualifying healthy items only, in-store, online and Dash. Purple Suite with Vitality Health; Black/Platinum 50%, Gold 40%." }
+
+  # ---------- health & beauty ----------
+  - name: ARC
+    category: health_beauty
+    ebucks:    { max: 30, label: "30%", note: "Private Wealth / RMB at Level 5. Premier up to 15%." }
+  - name: Clicks
+    category: health_beauty
+    ebucks:    { max: 15, label: "15%", note: "Level 5 with the Virtual Card. Doubles to 30% on Clicks Family Day (15th) and on Wednesdays for 60+." }
+    ucount:    { max: 30, label: "30%", note: "Tier 5 virtual credit card online. In-store up to 20%. Capped at R2,500 a cycle." }
+    discovery: { max: 50, label: "50%", star: true, note: "HealthyCare: qualifying health and care items only. Purple/Black/Platinum with Vitality Health; Gold 40%." }
+  - name: "Dis-Chem"
+    category: health_beauty
+    discovery: { max: 50, label: "50%", star: true, note: "HealthyCare: qualifying health and care items only. Left UCount on 28 Feb 2026." }
