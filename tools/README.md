@@ -6,7 +6,7 @@ Dev helpers that drive your installed Google Chrome headlessly (via `puppeteer-c
 cd tools && npm install        # once
 ```
 
-## Check the Partners page Venns
+## Check the Venn diagrams
 
 Start the Hugo dev server (port 1313), then:
 
@@ -14,7 +14,7 @@ Start the Hugo dev server (port 1313), then:
 node tools/check-venn.mjs
 ```
 
-Checks that every logo tile in both Venn diagrams sits inside its correct circle region (all four corners) with no overlaps, at 920, 1280 and 1600 px. Exits non-zero on any failure, including if the page errors or has no Venns. Run it after changing brands, tiles, circles or the cluster positions in `assets/css/partners.css`.
+Checks the Venns on the everyday-shops and partner-breakdown pages: every logo tile must sit inside its correct circle region (all four corners) with no overlaps, at 920, 1280 and 1600 px. Exits non-zero on any failure, including if the page errors or has no Venns. Run it after changing brands, tiles, circles or the cluster positions in `assets/css/partners.css`.
 
 ## Render any page
 
