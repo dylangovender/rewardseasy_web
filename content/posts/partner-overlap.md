@@ -4,11 +4,27 @@ date: 2026-10-03
 draft: false
 ---
 
-Every retailer partner of the big three bank rewards schemes, and where they overlap. Each logo shows whether you can **earn (E)**, **spend (S)** or get a **perk (P)** there, colour-coded by scheme.
+Where the big three bank rewards schemes pay you back, and how much. Start with the shops everyone actually compares (fuel, groceries, pharmacy), then see every partner.
 
-*Checked against the eBucks, UCount and Discovery websites on 3 October 2026.*
+*Checked against the eBucks, UCount and Discovery websites on 3–4 October 2026.*
 
-## Brands in more than one scheme
+## The everyday shops: who pays you, and how much
+
+The circles show where you **earn**. Each logo shows that scheme's best rate there, colour-coded.
+
+{{< key-venn >}}
+
+**Read the small print on the big numbers.** Discovery's 50–75% only applies to *qualifying healthy items* and needs the top Purple Suite plus Vitality Health. On everyday baskets, UCount's 30–40% at Checkers and Shoprite, eBucks' 20–30% at Pick n Pay, and the fuel rewards are the ones most people will actually feel. You can also *spend* Discovery Miles at Pick n Pay and Makro; that isn't shown here because you don't earn there.
+
+### Best earn rate, side by side
+
+Every scheme's best rate on one scale. Fuel rewards are paid per litre by eBucks and UCount, so they're converted to a percentage at today's petrol price. Hover over or tab to a bar for the conditions.
+
+{{< key-rates >}}
+
+## Every brand in more than one scheme
+
+Beyond the everyday shops, these are all the brands shared between schemes. Each logo shows whether you can **earn (E)**, **spend (S)** or get a **perk (P)** there.
 
 {{< partner-venn >}}
 
