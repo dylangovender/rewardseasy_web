@@ -46,6 +46,11 @@ url = '/posts/partner-overlap/'
 weight = 6
 
 [[menu.main]]
+name = 'All partners'
+url = '/posts/partner-breakdown/'
+weight = 7
+
+[[menu.main]]
 name = 'What changed'
 url = '/posts/2026-2027-changes/'
-weight = 7
+weight = 8
