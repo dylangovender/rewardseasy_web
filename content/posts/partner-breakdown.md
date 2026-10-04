@@ -4,7 +4,7 @@ date: 2026-10-04
 draft: false
 ---
 
-Every retailer partner of the big three bank rewards schemes, and where they overlap. Looking for the shops most people compare, and how much each one pays? Start with the [everyday shops]({{< ref "partner-overlap" >}}).
+Every retailer partner of the big three bank rewards schemes, and where they overlap. Looking for the shops most people compare, and how much each one pays? Start with the [everyday shops]({{< ref "everyday-shops" >}}).
 
 *Checked against the eBucks, UCount and Discovery websites on 3–4 October 2026.*
 

@@ -27,7 +27,7 @@ The three big South African bank rewards programmes, side by side. eBucks figure
 | Clothing | PnP Clothing | Edgars, Foschini, Woolworths and more (CYOR) | ALDO, Cape Union Mart, Superbalist |
 | Devices/tech | eBucks Shop (up to 100%) | Game, Makro, Samsung | Miles+ partners |
 
-**The overlap is small and telling:** **Clicks** and **Woolworths** are the only big retailers all three reward. **Fuel is completely split**: Engen, Astron Energy and bp/Shell each belong to one programme, so your bank effectively picks your forecourt. See the [everyday shops]({{< ref "partner-overlap" >}}) for who pays most where, or the [full partner breakdown]({{< ref "partner-breakdown" >}}) for every brand.
+**The overlap is small and telling:** **Clicks** and **Woolworths** are the only big retailers all three reward. **Fuel is completely split**: Engen, Astron Energy and bp/Shell each belong to one programme, so your bank effectively picks your forecourt. See the [everyday shops]({{< ref "everyday-shops" >}}) for who pays most where, or the [full partner breakdown]({{< ref "partner-breakdown" >}}) for every brand.
 
 ## Quick verdicts
 

@@ -41,8 +41,8 @@ url = '/posts/ebucks-vs-ucount-vs-discovery/'
 weight = 5
 
 [[menu.main]]
-name = 'Partners'
-url = '/posts/partner-overlap/'
+name = 'Everyday shops'
+url = '/posts/everyday-shops/'
 weight = 6
 
 [[menu.main]]
